@@ -1,4 +1,4 @@
-import {Node} from './Node.mjs'
+import {Node} from '../BaseClasses.mjs'
 
 export class DialogBox extends Node {
   constructor(name, position, layer, speed = 1, color=null) {
@@ -128,3 +128,6 @@ export class DialogBox extends Node {
     return canvas.map(row => row.join(''))
   }
 }
+
+
+console.log((new DialogBox()).drawDialogBox('hI. How are u?').join('\n'))
