@@ -330,7 +330,7 @@ class DialogBox extends Node {
 	  return this.variables.isActive ? this.drawDialogBox(this.currentText) : ['']
 	}
 	drawDialogBox (text, fixedBorders = false, minTextRowLength = 2) {
-	  const textMaxLength = 35
+	  const textMaxLength = 40
 	  const borderWidth = 1
 	  const padding = {x: 1, y: 0}
 	  const borderFillLines = {horizontal: '═', vertical: '|'}
@@ -484,7 +484,13 @@ class GameClass {
 		})
 
 		console.clear()
-		console.log([Array(CurrentCamera.viewPortSize[0]).fill('▒').join(''), ...canvas.map(row => row.join('')), Array(CurrentCamera.viewPortSize[0] + 1).fill('▒').join('')].join('▒\n'))
+		console.log(
+			[
+				Array(CurrentCamera.viewPortSize[0] + 1).fill('▒').join(''),
+				...canvas.map(row => '▒' + row.join('')),
+				Array(CurrentCamera.viewPortSize[0] + 2).fill('▒').join('')
+			
+			].join('▒\n'))
 		console.log('console:')
 	}
 
